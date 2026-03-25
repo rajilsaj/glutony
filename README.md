@@ -1,36 +1,38 @@
 ## Glutony
 
-```mermaid 
 
+```mermaid
 flowchart TD
-    A[Content Sources] --> B[Ingestion Layer]
-    B --> C[Ephemeral Raw Buffer<br/>Redis TTL]
-    C --> D[Normalization Layer]
-    D --> E[Embedding + Similarity]
-    E --> F[Topic Clustering]
 
-    F --> G[Source Scoring Engine]
-    G --> H[Representative Source Selection]
+A[Content Sources] --> B[Ingestion Layer]
+B --> C[Ephemeral Raw Buffer - Redis TTL]
+C --> D[Normalization Layer]
+D --> E[Embedding + Similarity]
+E --> F[Topic Clustering]
 
-    H --> I[AI Synthesis Pipeline<br/>Summarize + Combine + Rewrite in French]
-    I --> J[Compliance Layer]
+F --> G[Source Scoring Engine]
+G --> H[Representative Source Selection]
 
-    J --> K{Approval}
-    K -->|Auto| L[Approved Content]
-    K -->|Manual| M[Human Review]
+H --> I[AI Synthesis Pipeline - Summarize + Combine + Rewrite in French]
+I --> J[Compliance Layer]
 
-    L --> N[Safe Content Store]
-    M --> N
+J --> K{Approval}
+K -->|Auto| L[Approved Content]
+K -->|Manual| M[Human Review]
 
-    N --> O[Issue Builder<br/>Newsletter JSON]
-    O --> P[Template Engine]
-    O --> Q[Admin Dashboard]
+L --> N[Safe Content Store]
+M --> N
 
-    P --> R[Email Rendering]
-    Q --> R
+N --> O[Issue Builder - Newsletter JSON]
+O --> P[Template Engine]
+O --> Q[Admin Dashboard]
 
-    R --> S[Delivery Layer]
-    S --> T[Webhook Events]
-    T --> U[Analytics]
+P --> R[Email Rendering]
+Q --> R
 
-    U --> G
+R --> S[Delivery Layer]
+S --> T[Webhook Events]
+T --> U[Analytics]
+
+U --> G
+```
