@@ -1,5 +1,6 @@
 ## Glutony
 
+```mermaid 
 
 flowchart TD
 
@@ -64,3 +65,4 @@ T --> U[Analytics & Reporting<br/>CTR / source performance / template performanc
 
 %% FEEDBACK LOOP
 U --> G
+```
